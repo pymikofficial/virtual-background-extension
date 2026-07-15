@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Blur Background</title>
+<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="head">
+      <span class="dot" id="statusDot" aria-hidden="true"></span>
+      <h1>Blur Background</h1>
+    </div>
+
+    <div class="row toggle-row">
+      <label for="enabledToggle">Background blur</label>
+      <button id="enabledToggle" class="switch" role="switch" aria-checked="true" aria-label="Toggle background blur">
+        <span class="switch-knob"></span>
+      </button>
+    </div>
+
+    <div class="row slider-row">
+      <label for="blurSlider">Blur intensity</label>
+      <span id="blurValue" class="value">12px</span>
+    </div>
+    <input type="range" id="blurSlider" min="0" max="20" step="1" value="12" aria-label="Blur intensity">
+
+    <p class="hint">Works on any site using your camera (Google Meet, Zoom web, interview tools). Reload an open tab after changing settings for it to take effect.</p>
+
+    <footer>No watermark. No sign-in. Free.</footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
