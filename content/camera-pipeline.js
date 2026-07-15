@@ -99,9 +99,15 @@
         maskCanvas.width = mw;
         maskCanvas.height = mh;
       }
+      // This model's categoryMask encodes 0 = person ("selfie", the one
+      // labeled class) and 255 = background — verified empirically against
+      // the confidence mask (P(selfie) is 1.0 where categoryMask is 0, and
+      // 0.0 where categoryMask is 255). That's the inverse of the generic
+      // "category > 0" == foreground convention shown in MediaPipe's own
+      // docs samples, so don't "simplify" this back to `!== 0`.
       const imageData = maskCtx.createImageData(mw, mh);
       for (let i = 0; i < maskBytes.length; i++) {
-        const isPerson = maskBytes[i] !== 0;
+        const isPerson = maskBytes[i] === 0;
         const o = i * 4;
         imageData.data[o] = 255;
         imageData.data[o + 1] = 255;
