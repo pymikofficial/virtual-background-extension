@@ -1,2 +1,5 @@
 # Local Claude Code permissions (may embed secrets in allow-listed commands, never public)
 .claude/
+
+# Local-only Chrome Web Store submission zip, rebuild from source rather than committing a binary
+*.zip
