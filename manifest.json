@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Blur Background — Free Virtual Camera",
   "version": "0.1.0",
-  "description": "Free, no-watermark background blur for any video call site. Works with getUserMedia on Google Meet, Zoom web, and interview/assessment tools.",
+  "description": "Free background blur for video calls. No sign-in, no watermark, runs entirely in your browser.",
   "permissions": ["storage"],
   "host_permissions": ["<all_urls>"],
   "action": {
