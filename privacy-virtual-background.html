@@ -14,7 +14,7 @@
 </head>
 <body>
   <h1>Privacy Policy — Blur Background — Free Virtual Camera</h1>
-  <p class="updated">Last updated: July 15, 2026</p>
+  <p class="updated">Last updated: October 25, 2026</p>
 
   <p>This page explains, plainly, what this extension does with camera access
   and data. It describes the extension's actual technical behavior — it is
@@ -57,6 +57,12 @@
   the same way your browser bookmarks or other extension settings do. This
   is standard Chrome sync storage, not a server operated by this extension's
   developer.</p>
+
+  <p>It also keeps a small counter on your own device using
+  <code>chrome.storage.local</code>: how many video calls it has blurred, and
+  whether you have answered the one-time "rate this extension" card in the
+  popup. The counter is never sent anywhere, holds no video or call details,
+  and is removed when you uninstall the extension.</p>
 
   <h2>Contact</h2>
   <p>Questions about this extension can be directed to Soumik Chatterjee via

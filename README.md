@@ -107,7 +107,7 @@ headers yet either.
 
 ## Permissions
 
-- `storage` — save the toggle and blur-intensity setting.
+- `storage` — save the toggle and blur-intensity setting, plus a local count of blurred calls so a one-time rating card can appear in the popup after the 3rd call (never again once you rate or say no thanks).
 - `host_permissions: <all_urls>` — required so the content scripts can run
   on any site the user might be on a call in, matching "works on any
   getUserMedia site," not one platform.

@@ -27,7 +27,17 @@
 
     <p class="hint">Works on any site using your camera (Google Meet, Zoom web, interview tools). Reload an open tab after changing settings for it to take effect.</p>
 
-    <footer>No watermark. No sign-in. Free.</footer>
+    <div class="rate-card" id="rateCard" hidden>
+      <p class="rate-title">Enjoying Blur Background?</p>
+      <p class="rate-text">A quick rating helps other people find it. It takes 10 seconds.</p>
+      <div class="rate-actions">
+        <button type="button" class="rate-yes" id="rateYes">Rate it &#9733;</button>
+        <button type="button" class="rate-later" id="rateLater">Later</button>
+        <button type="button" class="rate-no" id="rateNo">No thanks</button>
+      </div>
+    </div>
+
+    <footer>No watermark. No sign-in. Free. <a href="#" id="rateLink" class="rate-link">&#9733; Rate on Chrome Web Store</a></footer>
   </div>
   <script src="popup.js"></script>
 </body>
