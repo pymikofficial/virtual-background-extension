@@ -21,6 +21,21 @@
     post({ state: stored, assets });
   });
 
+  // Counts one use per page load when the pipeline actually blurs a camera
+  // stream. Stored locally only, read by the popup to decide whether to show
+  // the one-time "rate this extension" card.
+  const USE_CHANNEL = "__vbe_use__";
+  let counted = false;
+  window.addEventListener("message", (event) => {
+    if (counted || event.source !== window) return;
+    const data = event.data;
+    if (!data || data.channel !== USE_CHANNEL || data.type !== "used") return;
+    counted = true;
+    chrome.storage.local.get({ useCount: 0 }, ({ useCount }) => {
+      chrome.storage.local.set({ useCount: useCount + 1 });
+    });
+  });
+
   chrome.storage.onChanged.addListener((changes, area) => {
     if (area !== "sync") return;
     const patch = {};

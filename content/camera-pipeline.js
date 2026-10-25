@@ -8,6 +8,7 @@
   window.__vbeInstalled = true;
 
   const CHANNEL = "__vbe_state__";
+  const USE_CHANNEL = "__vbe_use__";
   const state = { enabled: true, blurIntensity: 12 };
   let assets = null;
   let resolveAssets;
@@ -194,7 +195,11 @@
     if (!wantsVideo) return realStream;
 
     try {
-      return await buildProcessedStream(realStream);
+      const processed = await buildProcessedStream(realStream);
+      // Tell the isolated bridge a blurred call happened, so the popup can
+      // count real uses before ever asking for a rating. No data leaves the page.
+      if (state.enabled) window.postMessage({ channel: USE_CHANNEL, type: "used" }, "*");
+      return processed;
     } catch (err) {
       console.error("[BlurBackground] pipeline failed, using unmodified camera stream:", err);
       return realStream;

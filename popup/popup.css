@@ -118,3 +118,76 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, .08);
   padding-top: 10px;
 }
+
+.rate-card {
+  background: rgba(124, 92, 255, .12);
+  border: 1px solid rgba(124, 92, 255, .35);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 0 0 14px;
+}
+
+.rate-card[hidden] { display: none; }
+
+.rate-title {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 4px;
+}
+
+.rate-text {
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: #c4c4cc;
+  margin: 0 0 10px;
+}
+
+.rate-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.rate-actions button {
+  font: inherit;
+  font-size: 11.5px;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+}
+
+.rate-yes {
+  background: #7c5cff;
+  color: #fff;
+  font-weight: 600;
+}
+
+.rate-later {
+  background: transparent;
+  color: #d4d4d8;
+  border-color: rgba(255, 255, 255, .15) !important;
+}
+
+.rate-no {
+  background: transparent;
+  color: #a1a1aa;
+  margin-left: auto;
+  padding: 6px 2px !important;
+}
+
+.rate-actions button:focus-visible,
+.rate-link:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 2px;
+}
+
+.rate-link {
+  display: block;
+  width: fit-content;
+  margin: 6px auto 0;
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.rate-link:hover { text-decoration: underline; }
